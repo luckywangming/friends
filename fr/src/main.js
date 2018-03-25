@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import "lib-flexible/flexible.js"
 import "@/assets/stylus/index.styl"
+import 'swiper/dist/css/swiper.css'
 
 Vue.config.productionTip = false
 

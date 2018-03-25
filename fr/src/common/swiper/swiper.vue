@@ -1,15 +1,21 @@
 <template>
   <swiper :options='swiperOption'>
-    <swiper-slide>1</swiper-slide>
-    <swiper-slide>2</swiper-slide>
-    <swiper-slide>3</swiper-slide>
-    <swiper-slide>4</swiper-slide>
-    <swiper-slide>5</swiper-slide>
+    <swiper-slide v-for="item in data" v-bind:key="item" >
+      <img :src="item" alt="">
+    </swiper-slide>
   </swiper>
 </template>
 <script>
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 export default {
+  props: {
+    data: {
+      type: Array,
+      default:function(){
+        return ["./assets/image/index-banner.jpg"]
+      }
+    }
+  },
   components: {
     swiper,
     swiperSlide
@@ -25,10 +31,14 @@ export default {
 };
 </script>
 <style lang="stylus" scoped>
-@import 'swiper/dist/css/swiper.css';
-
 .swiper-slide {
   text-align: center;
+  height: 300px;
+  line-height: 300px;
+
+  img {
+    width: 100%;
+  }
 }
 </style>
 
