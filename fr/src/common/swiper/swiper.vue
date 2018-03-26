@@ -3,6 +3,7 @@
     <swiper-slide v-for="item in data" v-bind:key="item" >
       <img :src="item" alt="">
     </swiper-slide>
+    <div v-if="data.length > 1" class="swiper-pagination"  slot="pagination"></div>
   </swiper>
 </template>
 <script>
@@ -12,7 +13,7 @@ export default {
     data: {
       type: Array,
       default:function(){
-        return ["./assets/image/index-banner.jpg"]
+        return ["static/image/index-banner.jpg"]
       }
     }
   },
@@ -23,8 +24,15 @@ export default {
   data() {
     return {
       swiperOption: {
-        autoPlay: 1000,
-        direction: "horizontal"
+        autoplay: 3000,
+        direction : 'horizontal',
+        grabCursor : true,
+        setWrapperSize :true,
+        autoHeight: true,
+        pagination : '.swiper-pagination',
+        paginationClickable :true,
+        mousewheelControl : true,
+        observeParents:true
       }
     };
   }

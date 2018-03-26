@@ -22,6 +22,9 @@ export default {
       }
       // window.history.back()
     }
+  },
+  mounted:function(){
+    
   }
 };
 </script>
