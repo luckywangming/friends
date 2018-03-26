@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="loaded">
     <head-top></head-top>
     <swiper></swiper>
   </div>
@@ -8,6 +8,7 @@
 <script>
   import headTop from '@/common/header/head'
   import swiper from '@/common/swiper/swiper'
+  import {Indicator} from "mint-ui"
   export default {
     name: 'Index',
     components: {
@@ -16,8 +17,19 @@
     },
     data() {
       return {
-        msg: ''
+        loaded: false
       }
+    },
+    created () {
+      Indicator.open({
+        text:"加载中...",
+        spinnerType:"fading-circle"
+      })
+      console.log(this.loaded)
+      setTimeout(()=>{
+        this.loaded = true
+        Indicator.close()
+      },1000)
     }
   }
 
