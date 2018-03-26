@@ -12,6 +12,6 @@ export default {
 
 <style>
 #app {
-
+	color:#f00;
 }
 </style>
