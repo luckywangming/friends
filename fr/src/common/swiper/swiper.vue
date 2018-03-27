@@ -14,7 +14,7 @@ export default {
     data: {
       type: Array,
       default: function() {
-        return ["static/image/index-banner.jpg","static/image/index-banner.jpg"];
+        return ["static/image/index-banner.jpg"];
       }
     }
   },
@@ -24,17 +24,7 @@ export default {
   },
   data() {
     return {
-      swiperOption: {
-        autoplay: 3000,
-        direction: "horizontal",
-        grabCursor: true,
-        setWrapperSize: true,
-        autoHeight: true,
-        pagination: ".swiper-pagination",
-        paginationClickable: true,
-        mousewheelControl: true,
-        observeParents: true
-      }
+      
     };
   }
 };
