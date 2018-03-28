@@ -14,7 +14,7 @@ export default {
     data: {
       type: Array,
       default: function() {
-        return ["static/image/index-banner.jpg"];
+        return ["static/images/index-banner.jpg"];
       }
     }
   },

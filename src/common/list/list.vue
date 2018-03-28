@@ -1,0 +1,106 @@
+<template>
+  <ul class="list">
+    <li>
+      <div class="box"><img src="static/images/index-photo1.jpg" alt="照片"></div>
+      <div class="info">
+        <div>
+          <p class="name">昂格雷am</p>
+          <p class="age">24岁 | 165cm</p>
+        </div>
+        <div>
+          <i class="iconfont icon-hot"></i>
+          <p class="num">10265</p>
+        </div>
+      </div>
+      <span class="tuijian">推荐</span>
+    </li>
+    <li>
+      <div class="box"><img src="static/images/index-photo2.jpg" alt="照片"></div>
+      <div class="info">
+        <div>
+          <p class="name">昂格雷am</p>
+          <p class="age">24岁 | 165cm</p>
+        </div>
+        <div>
+          <i class="iconfont icon-hot"></i>
+          <p class="num">10265</p>
+        </div>
+      </div>
+      <span class="tuijian">推荐</span>
+    </li>
+  </ul>
+</template>
+<script>
+export default {};
+</script>
+<style lang="stylus" scoped>
+@import '../../../static/stylus/mixin.styl';
+
+.list {
+  padding: 30px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+  mt(-20px);
+
+  li {
+    width: calc(50% - 15px);
+    box-shadow: 0px 10px 10px #f0f0f0;
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.box {
+  height: 330px;
+  overflow: hidden;
+}
+
+.info {
+  text-align: center;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name {
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.age {
+  font-size: 20px;
+  color: #999;
+}
+
+.icon-hot {
+  color: #ff5955;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.num {
+  color: #666;
+  font-size: 28px;
+}
+
+.tuijian {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  font-size: 24px;
+  background-color: #aa68e8;
+}
+</style>
+
