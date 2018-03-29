@@ -1,5 +1,4 @@
 const mock = require("mockjs")
-const rdm = mock.Random
 
 function imgData(path, n, format) {
     let arr = []

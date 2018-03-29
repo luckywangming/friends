@@ -9,7 +9,7 @@
         </div>
         <div>
           <i class="iconfont icon-hot"></i>
-          <p class="num">{{item.num}}</p>
+          <p class="num">{{item.hot}}</p>
         </div>
       </div>
       <span v-if="item.tj" class="tuijian">推荐</span>
@@ -18,16 +18,14 @@
 </template>
 <script>
 export default {
-  props:{
-    data:Array
+  props: {
+    data: Array
   },
-  data () {
-    return {
-      
-    }
+  data() {
+    return {};
   },
-  mounted () {
-    console.log(this.data)
+  mounted() {
+    console.log(this.data);
   }
 };
 </script>
@@ -46,13 +44,16 @@ export default {
     width: calc(50% - 15px);
     box-shadow: 0px 10px 10px #f0f0f0;
     position: relative;
-    margin-top:30px;
-    &:first-child{
-      margin-top:0;
-      +li{
-        margin-top:0;
+    margin-top: 30px;
+
+    &:first-child {
+      margin-top: 0;
+
+      +li {
+        margin-top: 0;
       }
     }
+
     img {
       width: 100%;
     }
@@ -76,6 +77,7 @@ export default {
   color: #333;
   font-size: 28px;
   margin-bottom: 15px;
+  text-align: left;
 }
 
 .age {
@@ -87,6 +89,7 @@ export default {
   color: #ff5955;
   margin-bottom: 10px;
   display: inline-block;
+  font-size:14px;
 }
 
 .num {

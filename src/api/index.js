@@ -21,8 +21,8 @@ function apiAxios(method, url, params, response) {
     http({
         method: method,
         url: url,
-        data: method === 'POST' || method === 'PUT' ? params : null,
-        params: method === 'GET' || method === 'DELETE' ? params : null,
+        data: method === 'POST' ? params : null,
+        params: method === 'GET' ? params : null,
     }).then(function(res) {
         response(res);
     }).catch(function(err) {
@@ -36,11 +36,5 @@ export default {
     },
     post: function(url, params, response) {
         return apiAxios('POST', url, params, response)
-    },
-    put: function(url, params, response) {
-        return apiAxios('PUT', url, params, response)
-    },
-    delete: function(url, params, response) {
-        return apiAxios('DELETE', url, params, response)
     }
 }
