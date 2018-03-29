@@ -11,7 +11,7 @@ const api_index = mock.mock('http://index-mock', {
     'list|8': [{
         'id|+1': 1,
         'name': '@cname',
-        'img|+1': imgData('../static/images/index-photo', 8, '.jpg'),
+        'img|1': imgData('../static/images/index-photo', 8, '.jpg'),
         'age|16-30': 1,
         'height|152-175': 1,
         'hot|100-10000': 1,
