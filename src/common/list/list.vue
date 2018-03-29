@@ -67,7 +67,7 @@ export default {
 
 .info {
   text-align: center;
-  padding: 10px 20px;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -87,9 +87,9 @@ export default {
 
 .icon-hot {
   color: #ff5955;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   display: inline-block;
-  font-size:14px;
+  font-size:12px;
 }
 
 .num {

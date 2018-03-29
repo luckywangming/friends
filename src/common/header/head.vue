@@ -20,7 +20,6 @@ export default {
       }else{
         window.location.href = "/"
       }
-      // window.history.back()
     }
   },
   mounted:function(){

@@ -1,9 +1,10 @@
 <template>
-  <mt-loadmore>
+  <div>
     <div v-if="loaded">
       <head-top></head-top>
       <swiper></swiper>
     </div>
+    <mt-loadmore :top-method="loadTop" ref="loadmore">
     <div class="nav">
       <li>
         <i class="i-bg1"></i>
@@ -18,15 +19,23 @@
         <p>上推荐</p>
       </li>
     </div>
-    <list :data="list"></list>
+    <list v-if="list.length" :data="list"></list>
+    <div v-else class="loading">
+      <mt-spinner type="fading-circle" :size="24"></mt-spinner>
+    </div>
+    <more></more>
+    <bottom></bottom>
   </mt-loadmore>
+  </div>
 </template>
 
 <script>
 import headTop from "@/common/header/head";
 import swiper from "@/common/swiper/swiper";
 import list from "@/common/list/list";
-import { Indicator, Loadmore } from "mint-ui";
+import more from "@/common/more/more";
+import bottom from "@/common/bottom/bottom";
+import { Loadmore, Spinner } from "mint-ui";
 import {api_index} from '@/mock.js'
 export default {
   name: "Index",
@@ -34,13 +43,24 @@ export default {
     headTop,
     swiper,
     Loadmore,
-    list
+    Spinner,
+    list,
+    more,
+    bottom
   },
   data() {
     return {
       loaded: true,
       list:[]
     };
+  },
+  methods: {
+    loadTop(){
+      let _this = this
+      setTimeout(() => {
+        _this.$refs.loadmore.onTopLoaded();
+      }, 1000);
+    }
   },
   created() {
     let _this = this;
@@ -53,6 +73,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" scoped>
+.loading{
+  display flex 
+  justify-content center
+  padding 100px 0
+}
 .nav {
   display: flex;
   justify-content: space-around;
