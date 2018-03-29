@@ -6,7 +6,7 @@
     </div>
     <mt-loadmore :top-method="loadTop" ref="loadmore">
     <div class="nav">
-      <li>
+      <li @click.stop="girlList">
         <i class="i-bg1"></i>
         <p>找女友</p>
       </li>
@@ -60,6 +60,9 @@ export default {
       setTimeout(() => {
         _this.$refs.loadmore.onTopLoaded();
       }, 1000);
+    },
+    girlList(){
+      
     }
   },
   created() {
