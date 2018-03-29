@@ -18,7 +18,7 @@
         <p>上推荐</p>
       </li>
     </div>
-    <list></list>
+    <list :data="list"></list>
   </mt-loadmore>
 </template>
 
@@ -27,6 +27,7 @@ import headTop from "@/common/header/head";
 import swiper from "@/common/swiper/swiper";
 import list from "@/common/list/list";
 import { Indicator, Loadmore } from "mint-ui";
+import {api_index} from '@/mock.js'
 export default {
   name: "Index",
   components: {
@@ -37,19 +38,15 @@ export default {
   },
   data() {
     return {
-      loaded: true
+      loaded: true,
+      list:[]
     };
   },
   created() {
-    Indicator.open({
-      text: "加载中...",
-      spinnerType: "fading-circle"
-    });
-    console.log(this.loaded);
-    setTimeout(() => {
-      this.loaded = true;
-      Indicator.close();
-    }, 1000);
+    let _this = this;
+    _this.$api.get('http://index-mock',{},response=>{
+      _this.list = response.data.list;
+    })
   }
 };
 </script>
@@ -82,9 +79,11 @@ export default {
 .i-bg1 {
   background: url('/static/images/index-girl.png') no-repeat;
 }
+
 .i-bg2 {
   background: url('/static/images/index-boy.png') no-repeat;
 }
+
 .i-bg3 {
   background: url('/static/images/index-hot.png') no-repeat;
 }

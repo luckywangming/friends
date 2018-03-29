@@ -1,37 +1,35 @@
 <template>
   <ul class="list">
-    <li>
-      <div class="box"><img src="static/images/index-photo1.jpg" alt="照片"></div>
+    <li v-for="item in data" :key="item.id">
+      <div class="box"><img :src="item.img" alt="照片"></div>
       <div class="info">
         <div>
-          <p class="name">昂格雷am</p>
-          <p class="age">24岁 | 165cm</p>
+          <p class="name">{{item.name}}</p>
+          <p class="age">{{item.age}}岁 | {{item.height}}cm</p>
         </div>
         <div>
           <i class="iconfont icon-hot"></i>
-          <p class="num">10265</p>
+          <p class="num">{{item.num}}</p>
         </div>
       </div>
-      <span class="tuijian">推荐</span>
-    </li>
-    <li>
-      <div class="box"><img src="static/images/index-photo2.jpg" alt="照片"></div>
-      <div class="info">
-        <div>
-          <p class="name">昂格雷am</p>
-          <p class="age">24岁 | 165cm</p>
-        </div>
-        <div>
-          <i class="iconfont icon-hot"></i>
-          <p class="num">10265</p>
-        </div>
-      </div>
-      <span class="tuijian">推荐</span>
+      <span v-if="item.tj" class="tuijian">推荐</span>
     </li>
   </ul>
 </template>
 <script>
-export default {};
+export default {
+  props:{
+    data:Array
+  },
+  data () {
+    return {
+      
+    }
+  },
+  mounted () {
+    console.log(this.data)
+  }
+};
 </script>
 <style lang="stylus" scoped>
 @import '../../../static/stylus/mixin.styl';
@@ -48,7 +46,13 @@ export default {};
     width: calc(50% - 15px);
     box-shadow: 0px 10px 10px #f0f0f0;
     position: relative;
-
+    margin-top:30px;
+    &:first-child{
+      margin-top:0;
+      +li{
+        margin-top:0;
+      }
+    }
     img {
       width: 100%;
     }
