@@ -62,7 +62,12 @@ export default {
         _this.$refs.loadmore.onTopLoaded();
       }, 1000); 
     },
-    girlList() {},
+    girlList() {
+      // console.log(this.$route)
+      this.$router.push({
+        path:'/girlList'
+      })
+    },
     getData() {
       let _this = this;
       _this.$api.get("http://index-mock", {}, response => {
