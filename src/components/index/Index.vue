@@ -11,7 +11,7 @@
           <p>找女友</p>
         </li>
         <li>
-          <i class="i-bg2"></i>
+          <i @click.stop="boyList" class="i-bg2"></i>
           <p>找男友</p>
         </li>
         <li>
@@ -21,7 +21,7 @@
       </div>
       <list v-if="list.length" :data="list"></list>
       <div v-else class="loading">
-        <mt-spinner type="fading-circle" :size="24"></mt-spinner>
+        <mt-spinner color="#26a2ff" type="fading-circle" :size="24"></mt-spinner>
       </div>
       <more></more>
       <bottom></bottom>
@@ -36,7 +36,8 @@ import list from "@/common/list/list";
 import more from "@/common/more/more";
 import bottom from "@/common/bottom/bottom";
 import { Loadmore, Spinner } from "mint-ui";
-import { api_index } from "@/mock.js";
+import { index_list } from "@/mock.js";
+import { parseTj } from "@/tools.js";
 export default {
   name: "Index",
   components: {
@@ -68,10 +69,16 @@ export default {
         path:'/girlList'
       })
     },
+    boyList() {
+      // console.log(this.$route)
+      this.$router.push({
+        path:'/boyList'
+      })
+    },
     getData() {
       let _this = this;
       _this.$api.get("http://index-mock", {}, response => {
-        _this.list = response.data.list;
+        _this.list = parseTj(response.data.list);
       });
     }
   },
@@ -83,12 +90,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" scoped>
-.loading {
-  display: flex;
-  justify-content: center;
-  padding: 100px 0;
-}
-
 .nav {
   display: flex;
   justify-content: space-around;
