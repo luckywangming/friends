@@ -1,6 +1,6 @@
 <template>
   <ul class="list">
-    <li v-for="item in data" :key="item.id">
+    <li @click.stop="detail(item)" v-for="item in data" :key="item.id">
       <div class="box"><img :src="item.img" alt="照片"></div>
       <div class="info">
         <div>
@@ -24,7 +24,14 @@ export default {
   data() {
     return {};
   },
-  mounted() {
+  methods: {
+    detail(item) {
+      console.log(item)
+      this.$router.push({
+        path: "/detail",
+        query:{item:item}
+      });
+    }
   }
 };
 </script>
@@ -87,7 +94,7 @@ export default {
   color: #ff5955;
   margin-bottom: 5px;
   display: inline-block;
-  font-size:12px;
+  font-size: 12px;
 }
 
 .num {

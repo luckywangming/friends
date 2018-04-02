@@ -56,8 +56,9 @@ export default {
     };
   },
   methods: {
-    loadTop() {
+    loadTop(e) {
       let _this = this;
+      console.log(e)
       setTimeout(() => {
         _this.getData();
         _this.$refs.loadmore.onTopLoaded();

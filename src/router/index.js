@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Index from '@/components/index/Index'
 import girlList from '@/components/girl-list/girl-list'
 import boyList from '@/components/boy-list/boy-list'
+import detail from '@/components/detail/detail'
 
 Vue.use(Router)
 
@@ -19,5 +20,9 @@ export default new Router({
         path: '/boyList',
         name: 'boyList',
         component: boyList
+    }, {
+        path: '/detail',
+        name: 'detail',
+        component: detail
     }]
 })
