@@ -1,6 +1,6 @@
 # 交友网站
 
-> 使用vue2.0+vue-router+vuex+mockjs+mint-ui开发交友网站，后续使用nodejs搭建后台及开发react app
+> 使用vue2.0+vue-router+vuex+mockjs+mint-ui
 
 ## Build Setup
 
