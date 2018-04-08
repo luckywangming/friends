@@ -115,14 +115,14 @@ export default {
 }
 
 .i-bg1 {
-  background: url('/static/images/index-girl.png') no-repeat;
+  background: url('../../../static/images/index-girl.png') no-repeat;
 }
 
 .i-bg2 {
-  background: url('/static/images/index-boy.png') no-repeat;
+  background: url('../../../static/images/index-boy.png') no-repeat;
 }
 
 .i-bg3 {
-  background: url('/static/images/index-hot.png') no-repeat;
+  background: url('../../../static/images/index-hot.png') no-repeat;
 }
 </style>

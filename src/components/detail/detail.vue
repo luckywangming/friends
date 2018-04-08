@@ -26,13 +26,19 @@
         </li>
       </ul>
     </div>
+    <div class="modul">
+      <p class="module-tit">TA的相册</p>
+      <photo-list></photo-list>
+    </div>
   </div>
 </template>
 <script>
 import headerTop from "@/common/header/head";
+import photoList from "@/common/photo-list/photo-list";
 export default {
   components: {
-    headerTop
+    headerTop,
+    photoList
   },
   data() {
     return {
@@ -47,7 +53,6 @@ export default {
     getData() {
       this.$api.get("http://detail-mock", {}, response => {
         this.list = response.data.list[0];
-        console.log(this.list[0]);
       });
     }
   }
@@ -55,7 +60,8 @@ export default {
 </script>
 <style lang="stylus" scoped>
 .top {
-  background: linear-gradient(to bottom right, rgba(185, 52, 244, 0.7) 30%,rgba(166,68,242,0.7) 60%, rgba(100, 84, 242, 0.7));
+  background: -webkit-linear-gradient(to bottom right, rgba(185, 52, 244, 0.7) 30%, rgba(166, 68, 242, 0.7) 60%, rgba(100, 84, 242, 0.7));
+  background: linear-gradient(to bottom right, rgba(185, 52, 244, 0.7) 30%, rgba(166, 68, 242, 0.7) 60%, rgba(100, 84, 242, 0.7));
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -126,8 +132,8 @@ export default {
   justify-content: space-around;
   align-items: center;
   font-size: 24px;
-  margin-top:20px;
-  background: linear-gradient(left, rgba(195, 31, 246, 0.2) 30%, rgba(98, 72, 248, 0.2));
+  margin-top: 20px;
+  background: -webkit-linear-gradient(left, rgba(195, 31, 246, 0.2) 30%, rgba(98, 72, 248, 0.2));
 
   li {
     p:first-child {
@@ -135,6 +141,8 @@ export default {
     }
   }
 }
+
+
 </style>
 
 

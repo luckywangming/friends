@@ -1,9 +1,29 @@
 @import "./reset.styl"
 @import "./icon.styl"
+@import "./mixin.styl"
 @import "../fonts/iconfont.css"
 
 .loading {
   display: flex;
   justify-content: center;
   padding: 100px 0;
+}
+
+.module-tit {
+  height: 80px;
+  borderHalfBot(#e2e2e2);
+  color: #999;
+  font-size: 32px;
+  line-height: 80px;
+  padding-left: 40px;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 25px;
+    width: 4px;
+    height: 30px;
+    background-color: #b734f4;
+  }
 }

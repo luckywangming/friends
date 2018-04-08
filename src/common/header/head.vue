@@ -36,7 +36,7 @@ export default {
   text-align: center;
   line-height: 96px;
   color: #fff;
-  background: linear-gradient(left, #c31ff6 30%, #8941f2 80%, #6248f8);
+  background: -webkit-linear-gradient(left, #c31ff6 30%, #8941f2 80%, #6248f8);
   display: flex;
   padding: 0 20px;
 

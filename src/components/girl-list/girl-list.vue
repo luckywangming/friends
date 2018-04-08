@@ -2,7 +2,7 @@
   <div>
     <head-top title="同城女神"></head-top>
     <div class="banner">
-      <img src="/static/images/girl-list-banner_02.jpg" alt="背景图">
+      <img src="../../../static/images/girl-list-banner_02.jpg" alt="背景图">
     </div>
     <athlete-list @loadmore="loadmore" :list="list"></athlete-list>
     <more></more>
